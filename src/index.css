@@ -15,3 +15,7 @@ code {
 .login-back {
   background-image: url(./shoply-background.jpg);
 }
+
+.login-fail {
+  color: red;
+}
