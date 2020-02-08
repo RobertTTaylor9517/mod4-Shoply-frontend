@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Form, Message, Grid, Segment, Transition } from 'semantic-ui-react'
+import { Button, Form, Message, Grid, Segment } from 'semantic-ui-react'
+import { Animated } from 'react-animated-css'
 
 class Login extends React.Component{
     state = {
@@ -107,7 +108,7 @@ class Login extends React.Component{
 
                     <Grid.Row columns={3}>
                     <Grid.Column></Grid.Column>
-                    <Grid.Column className='tocenter'><Transition animation="fade" duration={1000} visible={true}><Segment>{this.errorRender()}</Segment></Transition></Grid.Column>
+                    <Grid.Column className='tocenter'><Animated animationIn='fadeIn' isVisible={true}><Segment>{this.errorRender()}</Segment></Animated></Grid.Column>
                     <Grid.Column></Grid.Column>
                     </Grid.Row>
                 </Grid>

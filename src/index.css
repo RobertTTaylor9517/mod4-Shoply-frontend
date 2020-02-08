@@ -33,3 +33,13 @@ code {
 .white-text{
   color: white !important;
 }
+
+.example-enter{
+
+  opacity: 0.01;
+
+}
+.example-enter-active{
+ opacity: 1;
+  transition: opacity 300ms;
+}
