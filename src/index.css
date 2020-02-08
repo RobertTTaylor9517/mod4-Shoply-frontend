@@ -14,8 +14,22 @@ code {
 
 .login-back {
   background-image: url(./shoply-background.jpg);
+  position: fixed;
+  background-size: cover !important;
 }
 
-.login-fail {
-  color: red;
+.main-on-page{
+  position: absolute;
+  top: 0px; /* Header Height */
+  bottom: 0px; /* Footer Height */
+  width: 100vw;
+}
+
+.tocenter{
+  position: absolute;
+  top: 50%;
+}
+
+.white-text{
+  color: white !important;
 }

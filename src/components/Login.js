@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Form, Message } from 'semantic-ui-react'
+import { Button, Form, Message, Grid, Segment } from 'semantic-ui-react'
 
 class Login extends React.Component{
     state = {
@@ -45,7 +45,7 @@ class Login extends React.Component{
     errorRender=()=>{
         if(this.state.login_fail === false){
             return (
-                <div className='login-back' align='middle' id='display-err'>
+                <div align='middle'>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Field>
                         <label>Username</label>
@@ -69,7 +69,7 @@ class Login extends React.Component{
             )
         }else{
             return(
-                <div className='login-back' align='middle' id='display-err'>
+                <div align='middle'>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Field>
                         <label>Username</label>
@@ -97,8 +97,21 @@ class Login extends React.Component{
 
     render(){
         return(
-            <div>
-                {this.errorRender()}
+            <div className='login-back main-on-page'>
+                <Grid>
+                    <Grid.Row columns={3}>
+                        <Grid.Column></Grid.Column>
+                        <Grid.Column></Grid.Column>
+                        <Grid.Column></Grid.Column>
+                    </Grid.Row>
+
+                    <Grid.Row columns={3}>
+                    <Grid.Column></Grid.Column>
+                    <Grid.Column className='tocenter'><Segment>{this.errorRender()}</Segment></Grid.Column>
+                    <Grid.Column></Grid.Column>
+                    </Grid.Row>
+                </Grid>
+                
             </div>
         )
     }
