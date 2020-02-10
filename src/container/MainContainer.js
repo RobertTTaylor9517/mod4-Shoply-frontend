@@ -9,7 +9,8 @@ class MainContainer extends React.Component{
         super()
         this.state = {
             logIn: false,
-            products: []
+            products: [],
+            filter: 'all'
         }
     }
 
@@ -35,6 +36,10 @@ class MainContainer extends React.Component{
                 logIn: false
             })
        }
+    }
+
+    filterProducts=(category)=>{
+        
     }
 
     render(){
