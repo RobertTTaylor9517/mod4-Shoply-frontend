@@ -17,6 +17,10 @@ code {
   position: fixed;
   background-size: cover !important;
 }
+.home-header {
+  background-image: url(./shoply-background.jpg);
+  background-size: cover;
+}
 
 .main-on-page{
   position: absolute;

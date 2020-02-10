@@ -1,29 +1,39 @@
 import React from 'react'
-import { Grid, Button, Form } from 'semantic-ui-react'
+import { Menu, Input, Button } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 const Navi = props =>{
     const logCheck = ()=>{
-        if(localStorage.token === undefined){
-            return <div>
-                <Button>Login</Button><Button>Signup</Button>
-            </div>
+        if(localStorage["token"] === undefined){
+           return(
+            <Menu.Menu position='right'>
+                <Menu.Item><Link to='/login'><Button>Login</Button></Link></Menu.Item>
+                <Menu.Item><Button>Sign up</Button></Menu.Item>
+            </Menu.Menu>
+           )
+             
         }else{
-           return <div>
-                <Button>Profile</Button><Button>Go To Cart</Button>
-            </div>
+           return(
+            <Menu.Menu position='right'>
+                <Menu.Item><Button color='red' onClick={()=>props.changeLogin()}>Logout</Button></Menu.Item>
+                <Menu.Item><Button>My Account</Button></Menu.Item>
+                <Menu.Item><Button>Go To Cart</Button></Menu.Item>
+            </Menu.Menu>
+           )
         }
     }
 
-return(
-    <Grid.Row>
-    <Grid.Column><Form>
-        <div><Form.Input fluid placeholder='search'/>
-        <Form.Button>Search</Form.Button></div>
-        
-        </Form></Grid.Column>
-    <Grid.Column><div>{logCheck()}</div></Grid.Column>
-</Grid.Row>
-)
+
+    return(
+        <div>
+            <Menu inverted>
+                 <Menu.Item>
+                    <Input action={{type: 'submit', content: 'Search'}}/>
+                 </Menu.Item>
+                 {logCheck()}
+            </Menu>
+        </div>
+    )
 
 }
 export default Navi

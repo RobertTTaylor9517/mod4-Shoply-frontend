@@ -8,6 +8,7 @@ class MainContainer extends React.Component{
     constructor(){
         super()
         this.state = {
+            logIn: false,
             products: []
         }
     }
@@ -22,14 +23,29 @@ class MainContainer extends React.Component{
         })
     }
 
+    changeLogin=(token = null)=>{
+       if(token !== null){
+           localStorage.setItem("token", token)
+           this.setState({
+               logIn: true
+           })
+       }else{
+           localStorage.clear()
+            this.setState({
+                logIn: false
+            })
+       }
+    }
+
     render(){
         return(
             <Router>
-                <Navi/>
+                <Navi changeLogin={this.changeLogin} logIn={this.state.logIn}/>
                 <div>
                     <Route exact path='/'
                     render={routerProps=> <Home products={this.state.products} {...routerProps}/>}/>
-                    <Route exact path='/login' component={Login} />
+                    <Route exact path='/login'
+                    render={routerProps=> <Login changeLogin={this.changeLogin} {...routerProps}/>} />
                 </div>
             </Router>
         )
