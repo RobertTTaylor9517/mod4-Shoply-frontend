@@ -19,7 +19,7 @@ code {
 }
 .home-header {
   background-image: url(./shoply-background.jpg);
-  background-size: cover;
+  background-size: contain !important;
 }
 
 .main-on-page{

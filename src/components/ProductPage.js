@@ -1,6 +1,6 @@
 import React from 'react'
 import {Grid, Image, Header, GridColumn, Button, Divider, Rating} from 'semantic-ui-react'
-import Comments from './Comments'
+import Reviews from './Reviews'
 
 function ProductPage(props){
 
@@ -23,7 +23,7 @@ function ProductPage(props){
                             <Header>Price: ${product.price}</Header>
                             <h1>{' '}</h1>
                             <Rating icon='star' defaultRating={product.rating} maxRating={5} size='huge' disabled/>
-                            <div><Button color='google plus'>Add To Cart</Button><Button>Buy Now</Button></div>
+                            <div><Button onClick={()=>props.addToCart(product)}color='google plus'>Add To Cart</Button><Button>Buy Now</Button></div>
                         </Grid.Column>
                     </Grid.Row>
                     <Divider/>
@@ -34,7 +34,7 @@ function ProductPage(props){
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
-                        <Grid.Column><Comments productId={pId}/></Grid.Column>
+                        <Grid.Column><Reviews productId={pId}/></Grid.Column>
                     </Grid.Row>
                 </Grid>
                 

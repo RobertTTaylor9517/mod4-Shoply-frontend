@@ -9,6 +9,7 @@ const Navi = props =>{
             <Menu.Menu position='right'>
                 <Menu.Item><Link to='/login'><Button>Login</Button></Link></Menu.Item>
                 <Menu.Item><Button>Sign up</Button></Menu.Item>
+                <Menu.Item><Link to='/cart'><Button>Cart({props.cart.length})</Button></Link></Menu.Item>
             </Menu.Menu>
            )
              
@@ -17,7 +18,7 @@ const Navi = props =>{
             <Menu.Menu position='right'>
                 <Menu.Item><Button color='red' onClick={()=>props.changeLogin()}>Logout</Button></Menu.Item>
                 <Menu.Item><Button>My Account</Button></Menu.Item>
-                <Menu.Item><Button>Go To Cart</Button></Menu.Item>
+                <Menu.Item><Link to='/cart'><Button>Cart({props.cart.length})</Button></Link></Menu.Item>
             </Menu.Menu>
            )
         }

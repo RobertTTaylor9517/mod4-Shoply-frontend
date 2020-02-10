@@ -13,7 +13,7 @@ const Product = props =>{
                     <Card.Description>Price: ${props.product.price}</Card.Description>
                 </Card.Content>
                 <Card.Content>
-                    <Button>Add To Cart</Button>
+                    <Button onClick={()=>props.addToCart(props.product)}>Add To Cart</Button>
                 </Card.Content>
             </Card>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Menu } from 'semantic-ui-react'
+import { Grid, Menu, Image, Header } from 'semantic-ui-react'
 import ProductContainer from '../container/ProductContainer'
 
 const Home = props => {
@@ -7,7 +7,7 @@ const Home = props => {
     return(
         <div>
             <Grid>
-                <Grid.Row><Grid.Column width={12} className="home-header"></Grid.Column></Grid.Row>
+                <Grid.Row><Grid.Column width={16}><Image src="/images/shoply-background.jpg" fluid/></Grid.Column></Grid.Row>
                 <Grid.Row>
                     <Grid.Column width={4}><Menu text vertical>
                         <Menu.Item header>Categories</Menu.Item>
@@ -27,7 +27,7 @@ const Home = props => {
                         onClick={()=>
                             props.filterProducts('general')}/>
                         </Menu></Grid.Column>
-                    <Grid.Column width={8}><ProductContainer products={props.products}/></Grid.Column>
+                    <Grid.Column width={8}><ProductContainer addToCart={props.addToCart} products={props.products}/></Grid.Column>
                 </Grid.Row>
             </Grid>
         </div>

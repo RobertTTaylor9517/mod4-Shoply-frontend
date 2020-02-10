@@ -1,16 +1,16 @@
 import React from 'react'
 
 
-class Comments extends React.Component{
+class Reviews extends React.Component{
     state={
         comments: []
     }
 
     render(){
         return(
-            <div>Comments</div>
+            <div>Reviews</div>
         )
     }
 
 }
-export default Comments
+export default Reviews

@@ -8,7 +8,7 @@ const ProductContainer = props => {
     const renderProducts=()=>{
         return props.products.map(product => {
             console.log(product)
-            return <Product product={product}/>
+            return <Product addToCart={props.addToCart} product={product}/>
         })
     }
 
