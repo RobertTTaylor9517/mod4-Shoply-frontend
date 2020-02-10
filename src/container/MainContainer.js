@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Login from '../components/Login'
 import Home from '../components/Home'
 import Navi from '../components/Nav'
+import ProductPage from '../components/ProductPage'
 
 class MainContainer extends React.Component{
     constructor(){
@@ -39,6 +40,14 @@ class MainContainer extends React.Component{
     }
 
     filterProducts=(category)=>{
+        fetch(`http://localhost:3000/category/${category}`)
+        .then(res=> res.json())
+        .then(products=>{
+            this.setState({
+                filter: category,
+                products: products
+            })
+        })
         
     }
 
@@ -48,9 +57,10 @@ class MainContainer extends React.Component{
                 <Navi changeLogin={this.changeLogin} logIn={this.state.logIn}/>
                 <div>
                     <Route exact path='/'
-                    render={routerProps=> <Home products={this.state.products} {...routerProps}/>}/>
+                    render={routerProps=> <Home filter={this.state.filter} filterProducts={this.filterProducts}products={this.state.products} {...routerProps}/>}/>
                     <Route exact path='/login'
                     render={routerProps=> <Login changeLogin={this.changeLogin} {...routerProps}/>} />
+                    <Route exact path={`/products/:productId`} render={routerProps=> <ProductPage products={this.state.products} {...routerProps}/>}/>
                 </div>
             </Router>
         )

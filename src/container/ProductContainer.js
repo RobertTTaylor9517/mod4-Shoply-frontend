@@ -1,6 +1,7 @@
 import React from 'react'
-import { Grid, Card } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 import Product from '../components/Product'
+import { Animated } from 'react-animated-css'
 
 const ProductContainer = props => {
 
@@ -12,9 +13,9 @@ const ProductContainer = props => {
     }
 
     return(
-       <Card.Group itemsPerRow={4}>
-           {renderProducts()}
-       </Card.Group>
+        <Animated animationIn='fadeInUp' animationInDuration={1000} isVisible={true} animateOnMount={true}><Card.Group itemsPerRow={4}>
+        {renderProducts()}
+    </Card.Group></Animated>
     )
 }
 export default ProductContainer;

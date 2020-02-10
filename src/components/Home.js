@@ -3,7 +3,6 @@ import { Grid, Menu } from 'semantic-ui-react'
 import ProductContainer from '../container/ProductContainer'
 
 const Home = props => {
-    let active = 'all'
 
     return(
         <div>
@@ -14,13 +13,19 @@ const Home = props => {
                         <Menu.Item header>Categories</Menu.Item>
                         <Menu.Item
                         name = 'all'
-                        active={active === 'all'}/>
+                        active={props.filter=== 'all'}
+                        onClick={()=>
+                            props.filterProducts('all')}/>
                         <Menu.Item
                         name='food'
-                        active={active === 'food'}/>
+                        active={props.filter=== 'food'}
+                        onClick={()=>
+                            props.filterProducts('food')}/>
                         <Menu.Item
                         name='general'
-                        active={active === 'general'}/>
+                        active={props.filter=== 'general'}
+                        onClick={()=>
+                            props.filterProducts('general')}/>
                         </Menu></Grid.Column>
                     <Grid.Column width={8}><ProductContainer products={props.products}/></Grid.Column>
                 </Grid.Row>
