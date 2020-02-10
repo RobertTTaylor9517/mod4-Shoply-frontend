@@ -25,8 +25,7 @@ class Login extends React.Component{
             },
             body: JSON.stringify({
                 username: this.state.username,
-                password: this.state.password,
-                login_fail: false
+                password: this.state.password
             })
         })
         .then(res => res.json())
@@ -108,7 +107,7 @@ class Login extends React.Component{
 
                     <Grid.Row columns={3}>
                     <Grid.Column></Grid.Column>
-                    <Grid.Column className='tocenter'><Animated animationIn='fadeIn' isVisible={true}><Segment>{this.errorRender()}</Segment></Animated></Grid.Column>
+                    <Grid.Column className='tocenter'><Animated animationIn='fadeIn' animationInDuration={500} isVisible={true}><Segment>{this.errorRender()}</Segment></Animated></Grid.Column>
                     <Grid.Column></Grid.Column>
                     </Grid.Row>
                 </Grid>
