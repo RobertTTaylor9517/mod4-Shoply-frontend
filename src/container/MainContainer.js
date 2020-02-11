@@ -60,6 +60,14 @@ class MainContainer extends React.Component{
         })
     }
 
+    removeFromCart=(product)=>{
+        let tempCart = [...this.state.cart]
+        let newCart = tempCart.filter(prod=> prod.id !== product.id)
+        this.setState({
+            cart: newCart
+        })
+    }
+
     render(){
         return(
             <Router>
@@ -72,7 +80,7 @@ class MainContainer extends React.Component{
                     <Route exact path='/signup'
                     render={routerProps=> <Signup changeLogin={this.changeLogin} {...routerProps}/>}/>
                     <Route exact path={`/products/:productId`} render={routerProps=> <ProductPage addToCart={this.addToCart} products={this.state.products} {...routerProps}/>}/>
-                    <Route exact path='/cart' render={routerProps=> <Cart cart={this.state.cart} {...routerProps}/>}/>
+                    <Route exact path='/cart' render={routerProps=> <Cart cart={this.state.cart} removeFromCart={this.removeFromCart} {...routerProps}/>}/>
                 </div>
             </Router>
         )
