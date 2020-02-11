@@ -22,7 +22,7 @@ function ProductPage(props){
                             <h1>{product.name}</h1>
                             <Header>Price: ${product.price}</Header>
                             <h1>{' '}</h1>
-                            <Rating icon='star' defaultRating={product.rating} maxRating={5} size='huge' disabled/>
+                            <Rating icon='star' defaultRating={3} maxRating={5} size='huge' disabled/>
                             <div><Button onClick={()=>props.addToCart(product)}color='google plus'>Add To Cart</Button><Button>Buy Now</Button></div>
                         </Grid.Column>
                     </Grid.Row>
@@ -33,6 +33,7 @@ function ProductPage(props){
                             <p>{product.description}</p>
                         </Grid.Column>
                     </Grid.Row>
+                    <Divider/>
                     <Grid.Row>
                         <Grid.Column><Reviews productId={pId}/></Grid.Column>
                     </Grid.Row>

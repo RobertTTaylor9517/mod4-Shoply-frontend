@@ -27,7 +27,7 @@ const Home = props => {
                         onClick={()=>
                             props.filterProducts('general')}/>
                         </Menu></Grid.Column>
-                    <Grid.Column width={8}><ProductContainer addToCart={props.addToCart} products={props.products}/></Grid.Column>
+                    <Grid.Column width={11}><ProductContainer addToCart={props.addToCart} products={props.products}/></Grid.Column>
                 </Grid.Row>
             </Grid>
         </div>
