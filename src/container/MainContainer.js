@@ -14,7 +14,8 @@ class MainContainer extends React.Component{
             logIn: false,
             products: [],
             filter: 'all',
-            cart: []
+            cart: [],
+            wallet: 0
         }
     }
 

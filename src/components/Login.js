@@ -31,6 +31,7 @@ class Login extends React.Component{
         .then(res => res.json())
         .then(tkn => {
             if(tkn.auth_token !== undefined){
+                console.log(tkn.wallet)
                 this.props.changeLogin(tkn.auth_token)
                 this.props.history.push('/')
             }else{
