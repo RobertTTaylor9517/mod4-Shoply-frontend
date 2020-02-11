@@ -8,7 +8,7 @@ const Navi = props =>{
            return(
             <Menu.Menu position='right'>
                 <Menu.Item><Link to='/login'><Button>Login</Button></Link></Menu.Item>
-                <Menu.Item><Button>Sign up</Button></Menu.Item>
+                <Menu.Item><Link to='/signup'><Button>Sign up</Button></Link></Menu.Item>
                 <Menu.Item><Link to='/cart'><Button>Cart({props.cart.length})</Button></Link></Menu.Item>
             </Menu.Menu>
            )

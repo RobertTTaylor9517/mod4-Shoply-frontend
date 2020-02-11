@@ -43,54 +43,9 @@ class Login extends React.Component{
     }
 
     errorRender=()=>{
-        if(this.state.login_fail === false){
-            return (
-                <div align='middle'>
-                <Form onSubmit={this.handleSubmit}>
-                    <Form.Field>
-                        <label>Username</label>
-                        <input onChange={this.handleChange}
-                        type='text'
-                        name='username'
-                        placeholder='Enter Username'
-                        value={this.state.username}/>
-                    </Form.Field>
-                    <Form.Field>
-                        <label>Password</label>
-                        <input onChange={this.handleChange}
-                        type='password'
-                        name='password'
-                        placeholder='Enter Password'
-                        value={this.state.password}/>
-                    </Form.Field>
-                    <Button type='submit'>Submit</Button>
-                </Form>
-            </div>
-            )
-        }else{
+        if(this.state.login_fail !== false){
             return(
-                <div align='middle'>
-                <Form onSubmit={this.handleSubmit}>
-                    <Form.Field>
-                        <label>Username</label>
-                        <input onChange={this.handleChange}
-                        type='text'
-                        name='username'
-                        placeholder='Enter Username'
-                        value={this.state.username}/>
-                    </Form.Field>
-                    <Form.Field>
-                        <label>Password</label>
-                        <input onChange={this.handleChange}
-                        type='password'
-                        name='password'
-                        placeholder='Enter Password'
-                        value={this.state.password}/>
-                    </Form.Field>
-                    <Button type='submit'>Submit</Button>
-                </Form>
                 <Message color='red'>Invalid Login</Message>
-            </div>
             )
         }
     }
@@ -107,7 +62,30 @@ class Login extends React.Component{
 
                     <Grid.Row columns={3}>
                     <Grid.Column></Grid.Column>
-                    <Grid.Column className='tocenter'><Animated animationIn='fadeIn' animationInDuration={500} isVisible={true}><Segment>{this.errorRender()}</Segment></Animated></Grid.Column>
+                    <Grid.Column className='tocenter'><Animated animationIn='fadeIn' animationInDuration={500} isVisible={true}><Segment>
+                    <div align='middle'>
+                        <Form onSubmit={this.handleSubmit}>
+                            <Form.Field>
+                                <label>Username</label>
+                                <input onChange={this.handleChange}
+                                type='text'
+                                name='username'
+                                placeholder='Enter Username'
+                                value={this.state.username}/>
+                            </Form.Field>
+                            <Form.Field>
+                                <label>Password</label>
+                                <input onChange={this.handleChange}
+                                type='password'
+                                name='password'
+                                placeholder='Enter Password'
+                                value={this.state.password}/>
+                            </Form.Field>
+                            <Button type='submit'>Submit</Button>
+                        </Form>
+                        {this.errorRender()}
+                    </div>
+            </Segment></Animated></Grid.Column>
                     <Grid.Column></Grid.Column>
                     </Grid.Row>
                 </Grid>

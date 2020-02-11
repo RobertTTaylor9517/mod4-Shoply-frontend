@@ -5,6 +5,7 @@ import Home from '../components/Home'
 import Navi from '../components/Nav'
 import ProductPage from '../components/ProductPage'
 import Cart from '../components/Cart'
+import Signup from '../components/Signup'
 
 class MainContainer extends React.Component{
     constructor(){
@@ -68,6 +69,8 @@ class MainContainer extends React.Component{
                     render={routerProps=> <Home addToCart={this.addToCart}filter={this.state.filter} filterProducts={this.filterProducts} products={this.state.products} {...routerProps}/>}/>
                     <Route exact path='/login'
                     render={routerProps=> <Login changeLogin={this.changeLogin} {...routerProps}/>} />
+                    <Route exact path='/signup'
+                    render={routerProps=> <Signup changeLogin={this.changeLogin} {...routerProps}/>}/>
                     <Route exact path={`/products/:productId`} render={routerProps=> <ProductPage addToCart={this.addToCart} products={this.state.products} {...routerProps}/>}/>
                     <Route exact path='/cart' render={routerProps=> <Cart cart={this.state.cart} {...routerProps}/>}/>
                 </div>
