@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Rating, Header, Form } from 'semantic-ui-react'
+import { Segment, Rating, Header, Form, Button } from 'semantic-ui-react'
 import Review from './Review'
 
 
@@ -29,16 +29,45 @@ class Reviews extends React.Component{
     }
 
     handleChange=(e)=>{
-        if(e.target.name === 'rating'){
-            this.setState({
-                [e.target.name]: e.target.value
-            })
-        }else{
-            this.setState({
-                [e.target.name]: e.target.value
-            })
-        }
+        this.setState({
+            [e.target.name]: e.target.value
+        })
        
+    }
+
+    handleRating=(e, {rating})=>{
+        this.setState({
+            rating: rating
+        })
+    }
+
+    addReview=(e)=>{
+        e.preventDefault()
+
+        let newRev ={
+            comment: this.state.comment,
+            rating: this.state.rating,
+            product_id: this.props.productId
+        }
+
+        fetch('http://localhost:3000/reviews/new', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                Authorization: localStorage['token']
+            },
+            body: JSON.stringify(newRev)
+        })
+        .then(res => res.json())
+        .then(review => {
+            this.setState({
+                reviews: [...this.state.reviews, review],
+                rating: 0,
+                comment: ''
+            })
+        })
+        .catch(err => alert('Did not Upload'))
     }
 
     renderForm=()=>{
@@ -51,8 +80,8 @@ class Reviews extends React.Component{
         }else{
             return(
                 <Segment>
-                    <Form>
-                        <Rating icon='star' rating={this.state.rating} maxRating={5} name='rating'/>
+                    <Form onSubmit={this.addReview}>
+                        <Rating onRate={this.handleRating} icon='star' rating={this.state.rating} maxRating={5} name='rating'/>
                         <Form.Field>
                         <label>Comment</label>
                             <input onChange={this.handleChange}
@@ -61,6 +90,7 @@ class Reviews extends React.Component{
                             placeholder='What do you think about this product?'
                             value={this.state.comment}/>
                         </Form.Field>
+                        <Button type='submit'>Submit</Button>
                     </Form>
                 </Segment>
             )
