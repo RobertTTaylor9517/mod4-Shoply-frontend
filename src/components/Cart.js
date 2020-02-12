@@ -14,7 +14,10 @@ const Cart = (props)=>{
         })
 
         return(
-            <Header>Total: ${total}</Header>
+            <div>
+                <Header>Total: ${total}</Header>
+                <Header>You have ${props.wallet} in your wallet</Header>
+            </div>
         )
     }
 
@@ -37,7 +40,7 @@ const Cart = (props)=>{
         if(localStorage['token'] !== undefined && props.cart.length > 0){
             return(
                 <div>
-                    <Button color='red'>Complete Purchase</Button>
+                    <Button color='red' onClick={()=>props.makePurchase(total)}>Complete Purchase</Button>
                     <Button>Empty Cart</Button>
                 </div>
             )
