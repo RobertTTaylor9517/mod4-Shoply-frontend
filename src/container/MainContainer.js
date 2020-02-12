@@ -151,7 +151,7 @@ class MainContainer extends React.Component{
                     <Route exact path='/search'
                     render={routerProps=> <Search handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} results={this.state.results} {...routerProps}/>}/>
                     <Route exact path='/account'
-                    render={routerProps=> <Account {...routerProps}/>}/>
+                    render={routerProps=> <Account changeLogin={this.changeLogin} {...routerProps}/>}/>
                 </div>
             </Router>
         )
