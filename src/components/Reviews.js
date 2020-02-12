@@ -21,6 +21,7 @@ class Reviews extends React.Component{
     }
 
     renderReviews=()=>{
+        this.props.getRating(this.state.averageRates)
         return this.state.reviews.map(review =>{
             return(
                 <Review review={review} />

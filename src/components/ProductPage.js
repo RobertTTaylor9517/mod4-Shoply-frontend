@@ -8,6 +8,12 @@ function ProductPage(props){
     console.log(pId)
     const product = props.products.find(product => product.id === pId)
 
+    let rating = 0
+
+    const getRating=(rate)=>{
+        return rate
+    }
+
     const productOut=()=>{
         if(product){
             return(
@@ -16,13 +22,13 @@ function ProductPage(props){
                         {' '}
                     </Grid.Row>
                     <Grid.Row>
-                        <Grid.Column width={8}><Image src='https://media.gettyimages.com/photos/different-types-of-food-on-rustic-wooden-table-picture-id861188910?s=2048x2048'/></Grid.Column>
+                        <Grid.Column width={8}><Image src={product.img}/></Grid.Column>
                         <GridColumn width={3}></GridColumn>
                         <Grid.Column width={3} align='right'>
                             <h1>{product.name}</h1>
                             <Header>Price: ${product.price}</Header>
                             <h1>{' '}</h1>
-                            <Rating icon='star' defaultRating={3} maxRating={5} size='huge' disabled/>
+                            <Rating icon='star' defaultRating={product.rating === 0 ? 3 : product.rating} maxRating={5} size='huge' disabled/>
                             <div><Button onClick={()=>props.addToCart(product)}color='google plus'>Add To Cart</Button><Button>Buy Now</Button></div>
                         </Grid.Column>
                     </Grid.Row>
@@ -35,7 +41,7 @@ function ProductPage(props){
                     </Grid.Row>
                     <Divider/>
                     <Grid.Row>
-                        <Grid.Column><Reviews productId={pId}/></Grid.Column>
+                        <Grid.Column><Reviews getRating={getRating} productId={pId}/></Grid.Column>
                     </Grid.Row>
                 </Grid>
                 

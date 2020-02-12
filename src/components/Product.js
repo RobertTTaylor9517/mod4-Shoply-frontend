@@ -6,10 +6,10 @@ const Product = props =>{
     return(
             <Card color='blue'>
                 <Link key={props.product.id} to={`/products/${props.product.id}`}>
-                <Image src='https://media.gettyimages.com/photos/different-types-of-food-on-rustic-wooden-table-picture-id861188910?s=2048x2048'/>
+                <Image size='small' src={props.product.img}/>
                 </Link>
                 <Card.Content>
-                    <Card.Header>{props.product.name}</Card.Header>
+                    <Card.Header>{props.product.name.substring(0, 30)}</Card.Header>
                     <Card.Description>Price: ${props.product.price}</Card.Description>
                 </Card.Content>
                 <Card.Content>

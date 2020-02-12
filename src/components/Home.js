@@ -22,10 +22,20 @@ const Home = props => {
                         onClick={()=>
                             props.filterProducts('food')}/>
                         <Menu.Item
-                        name='general'
-                        active={props.filter=== 'general'}
+                        name='clothing'
+                        active={props.filter=== 'clothing'}
                         onClick={()=>
-                            props.filterProducts('general')}/>
+                        props.filterProducts('clothing')}/>
+                        <Menu.Item
+                        name='electronics'
+                        active={props.filter=== 'electronics'}
+                        onClick={()=>
+                        props.filterProducts('electronics')}/>
+                        <Menu.Item
+                        name='toys'
+                        active={props.filter=== 'toys'}
+                        onClick={()=>
+                        props.filterProducts('toys')}/>
                         </Menu></Grid.Column>
                     <Grid.Column width={11}><ProductContainer addToCart={props.addToCart} products={props.products}/></Grid.Column>
                 </Grid.Row>
