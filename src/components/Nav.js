@@ -36,6 +36,9 @@ const Navi = props =>{
     return(
         <div>
             <Menu inverted>
+                <Menu.Item header>
+                    <Link to='/'>Shoply</Link>
+                </Menu.Item>
                  <Menu.Item>
                     <Input onChange={props.changeSearchTerm} type='text' placeholder='Search...' value={props.searchTerm} action>
                         <input />
