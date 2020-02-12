@@ -6,7 +6,7 @@ const Product = props =>{
     return(
             <Card color='blue'>
                 <Link key={props.product.id} to={`/products/${props.product.id}`}>
-                <Image size='small' src={props.product.img}/>
+                <Image size='medium' src={props.product.img}/>
                 </Link>
                 <Card.Content>
                     <Card.Header>{props.product.name.substring(0, 30)}</Card.Header>

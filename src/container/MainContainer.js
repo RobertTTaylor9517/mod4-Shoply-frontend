@@ -90,10 +90,14 @@ class MainContainer extends React.Component{
         })
         .then(res=>res.json())
         .then(user => {
-            this.setState({
-                wallet: user.wallet,
-                cart: []
-            })
+            if(user['error']){
+                alert('Not enough money')
+            }else{
+                this.setState({
+                    wallet: user.wallet,
+                    cart: []
+                })
+            }
         })
         .catch(err=>{
             alert('Purchase Error')

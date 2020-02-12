@@ -32,7 +32,7 @@ class Signup extends React.Component{
         .then(res => res.json())
         .then(tkn => {
             console.log(tkn)
-            if(tkn.token !== undefined){
+            if(tkn.auth_token !== undefined){
                 this.props.changeLogin(tkn)
                 this.props.history.push('/')
             }else{

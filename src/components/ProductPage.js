@@ -29,7 +29,7 @@ function ProductPage(props){
                             <Header>Price: ${product.price}</Header>
                             <h1>{' '}</h1>
                             <Rating icon='star' defaultRating={product.rating === 0 ? 3 : product.rating} maxRating={5} size='huge' disabled/>
-                            <div><Button onClick={()=>props.addToCart(product)}color='google plus'>Add To Cart</Button><Button>Buy Now</Button></div>
+                            <div><Button onClick={()=>props.addToCart(product)}color='google plus'>Add To Cart</Button>{/*<Button>Buy Now</Button>*/}</div>
                         </Grid.Column>
                     </Grid.Row>
                     <Divider/>
