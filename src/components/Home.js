@@ -7,7 +7,7 @@ const Home = props => {
     return(
         <div>
             <Grid padded>
-                <Grid.Row><Grid.Column width={16}><Image src="/images/shoply-background.jpg" fluid/></Grid.Column></Grid.Row>
+                <Grid.Row><Grid.Column width={16}><Image src="../shoply-background.jpg" fluid/></Grid.Column></Grid.Row>
                 <Grid.Row>
                     <Grid.Column width={4}><Menu text vertical>
                         <Menu.Item header>Categories</Menu.Item>
