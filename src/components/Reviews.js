@@ -11,7 +11,7 @@ class Reviews extends React.Component{
     }
 
     componentDidMount(){
-        fetch(`http://localhost:3000/reviews/${this.props.productId}`)
+        fetch(`https://boiling-escarpment-57210.herokuapp.com/reviews/${this.props.productId}`)
         .then(res => res.json())
         .then(reviews => {
             this.setState({
@@ -51,7 +51,7 @@ class Reviews extends React.Component{
             product_id: this.props.productId
         }
 
-        fetch('http://localhost:3000/reviews/new', {
+        fetch('https://boiling-escarpment-57210.herokuapp.com/reviews/new', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

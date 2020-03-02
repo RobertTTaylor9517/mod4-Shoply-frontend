@@ -10,7 +10,7 @@ class Account extends React.Component{
     }
 
     componentDidMount(){
-        fetch('http://localhost:3000/user',{
+        fetch('https://boiling-escarpment-57210.herokuapp.com/user',{
             headers: {
                 Authorization: localStorage['token']
             }
@@ -37,7 +37,7 @@ class Account extends React.Component{
 
     deleteReview=(review)=>{
         console.log(review)
-        fetch(`http://localhost:3000/reviews/${review}`,{
+        fetch(`https://boiling-escarpment-57210.herokuapp.com/reviews/${review}`,{
             method: "DELETE",
             headers: {
                 Authorization: localStorage['token']
@@ -61,7 +61,7 @@ class Account extends React.Component{
         e.preventDefault()
         let newWal = parseInt(this.state.wallet) + this.state.user.wallet
 
-        fetch(`http://localhost:3000/user/${this.state.user.id}`,{
+        fetch(`https://boiling-escarpment-57210.herokuapp.com/user/${this.state.user.id}`,{
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ class Account extends React.Component{
     }
 
     handleDelete=()=>{
-        fetch(`http://localhost:3000/user/${this.state.user.id}`,{
+        fetch(`https://boiling-escarpment-57210.herokuapp.com/user/${this.state.user.id}`,{
             method: 'DELETE',
             headers: {
                 Authorization: localStorage['token']
