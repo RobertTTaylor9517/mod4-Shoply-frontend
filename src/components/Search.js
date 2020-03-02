@@ -6,7 +6,7 @@ class Search extends React.Component{
 
     componentDidMount(){
         if(this.props.searchTerm !== ''){
-            fetch('http://localhost:3000/search',{
+            fetch('hhttps://boiling-escarpment-57210.herokuapp.com/search',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

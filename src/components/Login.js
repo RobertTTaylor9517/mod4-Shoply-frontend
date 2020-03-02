@@ -18,7 +18,7 @@ class Login extends React.Component{
     }
 
     handleSubmit=(e)=>{
-        fetch("http://localhost:3000/authenticate", {
+        fetch("https://boiling-escarpment-57210.herokuapp.com/authenticate", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

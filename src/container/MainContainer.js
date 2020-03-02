@@ -24,7 +24,7 @@ class MainContainer extends React.Component{
     }
 
     componentDidMount(){
-        fetch('http://localhost:3000/products')
+        fetch('https://boiling-escarpment-57210.herokuapp.com/products')
         .then(res => res.json())
         .then(products => {
             this.setState({
@@ -51,7 +51,7 @@ class MainContainer extends React.Component{
     }
 
     filterProducts=(category)=>{
-        fetch(`http://localhost:3000/category/${category}`)
+        fetch(`https://boiling-escarpment-57210.herokuapp.com/category/${category}`)
         .then(res=> res.json())
         .then(products=>{
             this.setState({
@@ -77,7 +77,7 @@ class MainContainer extends React.Component{
     }
 
     makePurchase=(total)=>{
-        fetch('http://localhost:3000/purchase', {
+        fetch('https://boiling-escarpment-57210.herokuapp.com/purchase', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ class MainContainer extends React.Component{
 
     secondarySearch=()=>{
         if(this.state.searchTerm !== ''){
-            fetch('http://localhost:3000/search',{
+            fetch('https://boiling-escarpment-57210.herokuapp.com/search',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

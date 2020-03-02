@@ -18,7 +18,7 @@ class Signup extends React.Component{
 
     handleSubmit=(e)=>{
         e.preventDefault()
-        fetch("http://localhost:3000/users/new", {
+        fetch("https://boiling-escarpment-57210.herokuapp.com/users/new", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
