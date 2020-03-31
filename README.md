@@ -6,7 +6,7 @@ Amazon (E-Commerce) Website clone
 
 ### Methods Used
 + uses Semantic UI and CSS for webpage styling
-+ React Break for responsiveness
++ Semantic-UI-React for quick component generataion
 
 ### Technologies
 + Javascript
